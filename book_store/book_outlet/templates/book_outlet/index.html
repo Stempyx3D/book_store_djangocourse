@@ -1,0 +1,26 @@
+{% extends "book_outlet/base.html" %}
+
+{% block title %}All Books{% endblock %}
+
+{% block content %}
+    <p>Welcome to the Book Outlet! Here you can find a wide selection of books across various genres. Whether you're looking for the latest bestsellers or timeless classics, we have something for every reader. Explore our collection and discover your next great read!</p>
+    <h1>Book Data</h1>
+    <p>Total Books: {{ books_counts }}</p>
+    <p>Average Rating: {{ average_rating }}</p>
+    <p>Maximum Rating: {{ max_rating }}</p>
+    <p>Minimum Rating: {{ min_rating }}</p>
+    <h1>Bestsellers</h1>
+    <ul>
+        {% for book in bestsellers %}
+            <li> {{ book.title }} by {{ book.author }} - ${{ book.price }} (Rating: {{ book.rating }}/5)</li>
+            <a href="{{ book.get_absolute_url }}">View Details</a>
+        {% endfor %}
+    </ul>
+    <h1>All Books</h1>
+    <ul>
+        {% for book in books %}
+            <li> {{ book.title }} by {{ book.author }} - ${{ book.price }} (Rating: {{ book.rating }}/5)</li>
+            <a href="{{ book.get_absolute_url }}">View Details</a>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "run-django-server",
+			"type": "shell",
+			"command": "e:\\1IT STEP UNIVERSITY\\Backend Web\\book_store\\.venv\\Scripts\\python.exe",
+			"args": [
+				"book_store\\manage.py",
+				"runserver",
+				"127.0.0.1:8000"
+			],
+			"isBackground": true,
+			"group": "build"
+		}
+	]
+}
